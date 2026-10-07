@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Задание 3 - КТ-7</title>
+    <link rel="stylesheet" href="/css/site.css">
+    <script src="/js/common.js" defer></script>
+    <script src="/js/bookings.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <p class="site-title">КТ-7 - Выполнение тестовых заданий</p>
+            <nav>
+                <a href="/">Главная</a>
+                <a href="/students.html">Задание 1</a>
+                <a href="/tasks.html">Задание 2</a>
+                <a href="/bookings.html">Задание 3</a>
+            </nav>
+        </div>
+    </header>
+    <main class="container content">
+        <h1>Задание 3</h1>
+        
+<p>Бронирование номеров, столов и залов</p>
+<div class="booking-grid">
+<section>
+    <h2 id="form-title">Новое бронирование</h2>
+    <form id="booking-form">
+        <label for="resource">Ресурс</label><select id="resource" required></select>
+        <label for="customer">Имя клиента</label><input id="customer" maxlength="100" required>
+        <div class="form-grid">
+            <div><label for="start">Начало</label><input id="start" type="datetime-local" required></div>
+            <div><label for="end">Окончание</label><input id="end" type="datetime-local" required></div>
+        </div>
+        <button type="submit" id="save-booking" disabled>Забронировать</button>
+        <button type="button" id="reset-booking">Очистить форму</button>
+    </form>
+</section>
+<section>
+    <h2>Доступные ресурсы</h2>
+    <form id="available-form">
+        <div class="form-grid">
+            <div><label for="available-start">Начало периода</label><input id="available-start" type="datetime-local" required></div>
+            <div><label for="available-end">Окончание периода</label><input id="available-end" type="datetime-local" required></div>
+        </div>
+        <label for="resource-type">Тип ресурса</label>
+        <select id="resource-type"><option value="">Все типы</option><option value="room">Номер</option><option value="table">Стол</option><option value="hall">Зал</option></select>
+        <button type="submit">Найти свободные ресурсы</button>
+    </form>
+    <p id="available-period" class="hint">Период ещё не выбран</p>
+    <div class="table-wrap"><table><thead><tr><th>ID</th><th>Ресурс</th><th>Тип</th></tr></thead><tbody id="available-body"></tbody></table></div>
+</section>
+</div>
+<section>
+    <h2>Бронирования</h2>
+    <button type="button" id="refresh-bookings">Обновить список</button>
+    <div class="table-wrap"><table><thead><tr><th>ID</th><th>Ресурс</th><th>Клиент</th><th>Начало</th><th>Окончание</th><th>Действия</th></tr></thead><tbody id="bookings-body"></tbody></table></div>
+</section>
+
+<section>
+    <h2>Ответ сервера</h2>
+    <dl class="response-info">
+        <dt>Метод и URL</dt><dd id="response-url">Запрос ещё не отправлен</dd>
+        <dt>Статус</dt><dd id="response-status">Запрос ещё не отправлен</dd>
+    </dl>
+    <pre id="response-body" class="preview">Здесь появится ответ API</pre>
+    <p id="error" class="error" role="alert"></p>
+</section>
+
+    </main>
+    <footer class="container">ADO.NET - ASP.NET Core API - КТ-7</footer>
+</body>
+</html>

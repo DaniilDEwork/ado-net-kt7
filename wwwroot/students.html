@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Задание 1 - КТ-7</title>
+    <link rel="stylesheet" href="/css/site.css">
+    <script src="/js/common.js" defer></script>
+    <script src="/js/students.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <p class="site-title">КТ-7 - Выполнение тестовых заданий</p>
+            <nav>
+                <a href="/">Главная</a>
+                <a href="/students.html">Задание 1</a>
+                <a href="/tasks.html">Задание 2</a>
+                <a href="/bookings.html">Задание 3</a>
+            </nav>
+        </div>
+    </header>
+    <main class="container content">
+        <h1>Задание 1</h1>
+        
+<p>Список студентов</p>
+<section>
+    <h2 id="form-title">Добавление студента</h2>
+    <form id="student-form">
+        <div class="form-grid">
+            <div><label for="name">Имя студента</label><input id="name" maxlength="100" required></div>
+            <div><label for="age">Возраст</label><input id="age" type="number" min="1" max="120" step="1" required></div>
+        </div>
+        <button type="submit" id="save-student">Добавить студента</button>
+        <button type="button" id="reset-student">Очистить форму</button>
+    </form>
+</section>
+<section>
+    <h2>Студенты</h2>
+    <button type="button" id="refresh-students">Обновить список</button>
+    <div class="table-wrap"><table>
+        <thead><tr><th>ID</th><th>Имя</th><th>Возраст</th><th>Действия</th></tr></thead>
+        <tbody id="students-body"></tbody>
+    </table></div>
+</section>
+
+<section>
+    <h2>Ответ сервера</h2>
+    <dl class="response-info">
+        <dt>Метод и URL</dt><dd id="response-url">Запрос ещё не отправлен</dd>
+        <dt>Статус</dt><dd id="response-status">Запрос ещё не отправлен</dd>
+    </dl>
+    <pre id="response-body" class="preview">Здесь появится ответ API</pre>
+    <p id="error" class="error" role="alert"></p>
+</section>
+
+    </main>
+    <footer class="container">ADO.NET - ASP.NET Core API - КТ-7</footer>
+</body>
+</html>
